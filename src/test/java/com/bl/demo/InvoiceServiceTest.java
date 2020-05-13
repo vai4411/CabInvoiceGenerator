@@ -1,6 +1,5 @@
 package com.bl.demo;
 
-import com.bl.demo.InvoiceGenerator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,7 +33,17 @@ public class InvoiceServiceTest {
       Ride[] rides = { new Ride(2.0, 5),
                        new Ride(0.1,1)
                      };
-      double fare = invoiceGenerator.calculateFare(rides);
+      double fare = invoiceGenerator.calculateFares(rides);
       Assert.assertEquals(30,fare,0.0);
+   }
+
+   @Test
+   public void givenMultipleRides_ShouldReturnInvoiceSummary() {
+      Ride[] rides = { new Ride(2.0, 5),
+              new Ride(0.1,1)
+      };
+      InvoiceSummary summary = invoiceGenerator.calculateFare(rides);
+      InvoiceSummary invoiceSummary = new InvoiceSummary(2, 30.0);
+      Assert.assertEquals(invoiceSummary,summary);
    }
 }
