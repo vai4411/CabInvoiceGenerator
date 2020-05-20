@@ -1,5 +1,7 @@
 package com.bl.demo;
 
+import com.bl.demo.model.Ride;
+
 import java.util.*;
 
 public class RideRepository {

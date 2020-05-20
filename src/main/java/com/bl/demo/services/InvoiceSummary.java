@@ -1,4 +1,4 @@
-package com.bl.demo;
+package com.bl.demo.services;
 
 public class InvoiceSummary {
     private final int numberOfRides;
